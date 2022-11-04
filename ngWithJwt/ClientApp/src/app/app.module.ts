@@ -37,8 +37,9 @@ import { AdminGuard } from './guards/admin.guard';
     { path: 'admin-home', component: AdminHomeComponent, canActivate: [AdminGuard] }
 ], { relativeLinkResolution: 'legacy' })
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
-  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true },
   ],
   bootstrap: [AppComponent]
 })
